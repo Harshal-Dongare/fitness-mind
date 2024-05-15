@@ -1,0 +1,70 @@
+/* Set the header to take up the full viewport width and height */
+.main__header {
+    /* Set the width to 100% of the viewport width */
+    width: 100vw;
+    /* Set the height to 100% of the viewport height */
+    height: calc(100vh - 3rem);
+    /* Create a grid with one row and one column */
+    display: grid;
+    /* Center the grid items both horizontally and vertically */
+    place-items: center;
+    /* Add a top margin of 3rem */
+    margin-top: 3rem;
+}
+
+/* Set height of the container to 100% of the header */
+.main__header_container {
+    height: 100%;
+
+    /* Create a grid with 2 columns */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /* Center grid items vertically */
+    align-items: center;
+
+    /* Justify items to the left and right of the container */
+    justify-content: space-evenly;
+
+    /* Set gap between grid items to 6rem */
+    gap: 6rem;
+}
+
+.main__header_left {
+    margin-top: -3rem;
+}
+
+.main__header_left h4 {
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+    font-weight: 400;
+}
+
+.main__header_left p {
+    margin: 1rem 0 3.5rem;
+    font-size: 1.1rem;
+}
+
+.main__header_right {
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.main__header_circle {
+    width: 25rem;
+    height: 25rem;
+    background: linear-gradient(75deg, #ff8008, transparent);
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(80px);
+    transition: var(--transition);
+}
+
+/* .main__header_right:hover .main__header_circle {
+    filter: blur(80px);
+} */
+
+.main__header_image {
+    position: relative;
+}

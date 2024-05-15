@@ -1,0 +1,11 @@
+.faqs {
+    margin-top: 7rem;
+}
+
+.faqs__wrapper {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 5rem;
+    align-items: flex-start;
+}

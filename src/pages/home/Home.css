@@ -1,0 +1,125 @@
+/* Media Queries (Medium Screen) */
+@media Screen and (max-width: 1024px) {
+    /* MainHeader Section */
+    .main__header {
+        height: fit-content;
+        padding: 12rem 0 2rem;
+    }
+
+    .main__header_container {
+        gap: 0;
+    }
+
+    .main__header_circle {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    /* Program Section */
+    .programs_wrapper {
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 0;
+    }
+
+    /* Values Section */
+    .values__container {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 4rem;
+    }
+
+    .values__wrapper {
+        gap: 4rem 3rem;
+    }
+
+    .values__image {
+        display: none;
+    }
+
+    /* FAQs Section */
+    .faqs__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    /*Testimonial Section */
+    .testimonials {
+        width: 75%;
+    }
+
+    /* Footer Section */
+    .footer__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .footer__container article {
+        align-items: center;
+    }
+}
+
+/* Media Queries (Small Screen) */
+@media Screen and (max-width: 600px) {
+    /* MainHeader Section */
+    .main__header {
+        margin-top: 0;
+    }
+
+    .main__header_right {
+        display: none;
+    }
+
+    .main__header_container {
+        grid-template-columns: 1fr;
+    }
+
+    .main__header_left {
+        text-align: center;
+    }
+
+    /* Program Section */
+    .programs_wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .programs__program {
+        width: 84%;
+        margin-inline: auto;
+    }
+
+    /* Values Section */
+    .values__wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        justify-items: center;
+    }
+
+    .values__value {
+        width: 84%;
+    }
+
+    /* FAQs Section */
+    .faqs__wrapper {
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    /* Testimonial Section */
+    .testimonials {
+        width: 100%;
+    }
+
+    /* Footer Section */
+    footer {
+        margin-top: 4rem;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .footer__container article p{
+        text-align: center;
+    }
+}

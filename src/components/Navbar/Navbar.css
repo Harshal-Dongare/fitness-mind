@@ -1,0 +1,183 @@
+nav {
+    /** Set height and width */
+    height: 5rem;
+    width: 100vw;
+
+    /** Background color */
+    background: var(--color-primary);
+
+    /** Center the grid items horizontally and vertically */
+    display: grid;
+    place-items: center;
+
+    /** Fixed positioning at the top left corner */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /** Ensure the navigation bar appears above other content */
+    z-index: 99;
+}
+
+/* ? Only shows hamburger button on medium and small screens */
+.nav__toggle_btn {
+    display: none;
+}
+
+.nav__container {
+    /** property for the `nav_links` in smaller and medium screens */
+    position: relative;
+
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company_logo {
+    /* width: 7rem; */
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav__links {
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+/*? NavLink component renders anchor element of HTML, so to select it we use `a` instead Navlink */
+.nav__links a {
+    transition: var(--transition);
+}
+
+.nav__links a:hover {
+    color: var(--color-secondary);
+}
+
+.active_nav {
+    position: relative;
+    color: var(--color-secondary);
+}
+
+/*? Styles for a pseudo-element `.active_nav::after` for visual indicator of active navigation item */
+.active_nav::after {
+    /** No visible content for the pseudo-element */
+    content: "";
+
+    /** Position the pseudo-element absolutely within its containing block */
+    position: absolute;
+
+    /** Display the pseudo-element as a block-level element */
+    display: block;
+
+    /** Set the width of the pseudo-element to 1.2rem */
+    width: 1.2rem;
+
+    /** Set the height of the pseudo-element to 1.2rem */
+    height: 1.2rem;
+
+    /** Set the background color of the pseudo-element to red */
+    background: var(--color-primary);
+
+    /*
+    * Horizontally center the pseudo-element within its containing block 
+    * 0.6rem is the half width of the of the pseudo-element
+    * 50% represents the half of the width of the container block
+    */
+    left: calc(50% - 0.6rem);
+
+    /** Add a top margin of 0.9rem to the pseudo-element */
+    margin-top: 0.9rem;
+
+    /** Apply a rotation transform to the pseudo-element, rotating it 45 degrees clockwise */
+    transform: rotate(45deg);
+}
+
+/*! Media queries(medium and small screens) */
+
+@media screen and (max-width: 1024px) {
+    .nav__toggle_btn {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .nav__toggle_btn svg {
+        color: var(--color-gray-100);
+    }
+
+    .nav__links {
+        /** `relative` set on `nav__container` class */
+        position: absolute;
+
+        /** so the link list will starts just below from the nav__container */
+        top: 100%;
+
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        perspective: 400px;
+    }
+
+    /** Visual indicator of active navigation link set hidden for small screens */
+    .active_nav,
+    .active_nav::after {
+        display: none;
+    }
+
+    .nav__links li {
+        height: 4rem;
+        width: 100%;
+        box-shadow: -2rem 2rem 5rem rgba(0, 0, 0, 0.4);
+        animation: navAnimation 600ms ease forwards;
+        transform: rotateX(90deg);
+        opacity: 0;
+        transform-origin: top;
+    }
+
+    .nav__links li:nth-child(2) {
+        animation-delay: 200ms;
+    }
+    .nav__links li:nth-child(3) {
+        animation-delay: 400ms;
+    }
+    .nav__links li:nth-child(4) {
+        animation-delay: 600ms;
+    }
+    .nav__links li:nth-child(5) {
+        animation-delay: 800ms;
+    }
+    .nav__links li:nth-child(6) {
+        animation-delay: 1s;
+    }
+    .nav__links li:nth-child(7) {
+        animation-delay: 1.2s;
+    }
+
+    @keyframes navAnimation {
+        to {
+            transform: rotateX(0);
+            opacity: 1;
+        }
+    }
+
+    .nav__links li a {
+        background-color: var(--color-primary);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem 5rem 1rem 3rem;
+    }
+
+    .show__nav {
+        display: flex;
+    }
+
+    .hide__nav {
+        display: none;
+    }
+}
